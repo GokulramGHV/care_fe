@@ -120,6 +120,7 @@ const SelectMenuV2 = <T, V>(props: SelectMenuProps<T, V>) => {
                   <Listbox.Options className="cui-dropdown-base">
                     {options.map((option, index) => (
                       <Listbox.Option
+                        data-cy={`${props.id}-${index}`}
                         id={`${props.id}-option-${option.value}`}
                         key={index}
                         className={dropdownOptionClassNames}

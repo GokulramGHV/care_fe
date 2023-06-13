@@ -34,6 +34,7 @@ export default function SwitchV2<T>(props: SwitchProps<T>) {
 
           return (
             <li
+              data-cy={`${props.name}-${index}`}
               tabIndex={0}
               className={`cursor-pointer px-4 p-2 first:rounded-l-lg last:rounded-r-lg shadow-sm focus:ring-1 border transition-all duration-200 ease-in-out outline-none ${additionalClassNames}`}
               key={index}

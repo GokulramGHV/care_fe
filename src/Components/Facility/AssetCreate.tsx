@@ -512,6 +512,7 @@ const AssetCreate = (props: AssetProps) => {
                     {/* Asset Name */}
                     <div className="col-span-6" ref={fieldRef["name"]}>
                       <TextFormField
+                        id="asset-name"
                         name="name"
                         label="Asset Name"
                         required
@@ -527,6 +528,7 @@ const AssetCreate = (props: AssetProps) => {
                     </FieldLabel>
                     <div ref={fieldRef["location"]} className="col-span-6">
                       <LocationSelect
+                        id="location"
                         name="Facilities"
                         setSelected={(selectedId) =>
                           setLocation((selectedId as string) || "")
@@ -542,6 +544,7 @@ const AssetCreate = (props: AssetProps) => {
                     <div className="col-span-6 flex flex-col lg:flex-row gap-x-12 xl:gap-x-16 transition-all">
                       <div ref={fieldRef["asset_type"]} className="flex-1">
                         <SelectFormField
+                          id="asset-type"
                           label="Asset Type"
                           name="asset_type"
                           required
@@ -571,6 +574,7 @@ const AssetCreate = (props: AssetProps) => {
                       {/* Asset Class */}
                       <div ref={fieldRef["asset_class"]} className="flex-1">
                         <SelectFormField
+                          id="asset-class"
                           disabled={!!(props.assetId && asset_class)}
                           placeholder={props.assetId ? t("none") : undefined}
                           name="asset_class"
@@ -593,6 +597,7 @@ const AssetCreate = (props: AssetProps) => {
                     {/* Description */}
                     <div className="col-span-6">
                       <TextAreaFormField
+                        id="asset-description"
                         name="asset_description"
                         label="Description"
                         placeholder="Details about the equipment"

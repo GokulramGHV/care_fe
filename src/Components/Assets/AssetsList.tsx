@@ -239,13 +239,14 @@ const AssetsList = () => {
   if (assetsExist) {
     manageAssets = (
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:-mx-8 gap-2">
-        {assets.map((asset: AssetData) => (
+        {assets.map((asset: AssetData, idx: number) => (
           <Link
             href={`/facility/${asset?.location_object.facility.id}/assets/${asset.id}`}
             className="text-inherit"
           >
             <div
               key={asset.id}
+              data-cy={`asset-${idx}`}
               className="w-full bg-white rounded-lg cursor-pointer border-1 shadow p-5 justify-center items-center border border-transparent hover:border-primary-500"
             >
               <div className="md:flex">

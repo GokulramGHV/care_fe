@@ -64,6 +64,7 @@ export default function PageTitle({
                 if (onBackClick && onBackClick() === false) return;
                 goBack(backUrl);
               }}
+              data-cy="back-button"
             >
               <i className="fas fa-chevron-left text-2xl rounded-md p-2 hover:bg-gray-200 mr-1">
                 {" "}

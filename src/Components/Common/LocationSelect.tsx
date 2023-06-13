@@ -4,6 +4,7 @@ import { listFacilityAssetLocation } from "../../Redux/actions";
 import AutocompleteFormField from "../Form/FormFields/Autocomplete";
 import AutocompleteMultiSelectFormField from "../Form/FormFields/AutocompleteMultiselect";
 interface LocationSelectProps {
+  id?: string;
   name: string;
   margin?: string;
   errors: string;
@@ -19,6 +20,7 @@ interface LocationSelectProps {
 
 export const LocationSelect = (props: LocationSelectProps) => {
   const {
+    id,
     name,
     multiple,
     selected,
@@ -55,6 +57,7 @@ export const LocationSelect = (props: LocationSelectProps) => {
 
   return props.multiple ? (
     <AutocompleteMultiSelectFormField
+      id={id}
       name={name}
       value={selected as unknown as string[]}
       options={locations}
@@ -71,6 +74,7 @@ export const LocationSelect = (props: LocationSelectProps) => {
     />
   ) : (
     <AutocompleteFormField
+      id={id}
       name={name}
       value={selected as string}
       options={locations}
